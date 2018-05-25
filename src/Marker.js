@@ -100,9 +100,11 @@ class Marker extends Component {
       hover,
     } = this.state
 
+    console.log('Rotate Value:', rotate);
+
     const scale = preserveMarkerAspect ? ` scale(${1/zoom})` : ""
     const translation = projection(marker.coordinates)
-    const rotateInput = rotate ? `rotate(${rotate}deg)` : "";
+    const rotateInput = rotate ? ` rotate(${rotate}deg)` : "";
 
     console.log('Rotate Input:', rotateInput);
 
@@ -126,7 +128,7 @@ class Marker extends Component {
          transform={ `translate(
            ${ translation[0] }
            ${ translation[1] }
-         ) ${scale} ${rotateInput}`}
+         ) ${scale}${rotateInput}`}
          style={ style[isHidden ? "hidden" : (pressed || hover ? (pressed ? "pressed" : "hover") : "default")] }
          onMouseEnter={ this.handleMouseEnter }
          onMouseLeave={ this.handleMouseLeave }
