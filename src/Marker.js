@@ -11,7 +11,7 @@ class Marker extends Component {
       pressed: false,
     }
 
-    console.log('constructor.');
+    console.log('hey man.');
 
     this.handleMouseEnter = this.handleMouseEnter.bind(this)
     this.handleMouseLeave = this.handleMouseLeave.bind(this)
