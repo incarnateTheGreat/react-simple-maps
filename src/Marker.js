@@ -101,7 +101,7 @@ class Marker extends Component {
       hover,
     } = this.state
 
-    const scale = (zoom < 8 && preserveMarkerAspect ? (defaultZoomNumerator ? ` scale(${defaultZoomNumerator/zoom})` : ` scale(${1/zoom})`) : "")
+    const scale = preserveMarkerAspect ? (zoom < 4 ? ` scale(${defaultZoomNumerator/zoom})` : ` scale(${1/zoom})`) : ""
     const translation = projection(marker.coordinates)
     const rotateInput = rotate ? ` rotate(${rotate})` : "";
 
