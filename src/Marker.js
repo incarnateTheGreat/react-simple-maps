@@ -104,9 +104,9 @@ class Marker extends Component {
 
     const scale = preserveMarkerAspect ? ` scale(${1/zoom})` : ""
     const translation = projection(marker.coordinates)
-    const rotateInput = rotate ? ` rotate(${rotate}deg)` : "";
+    const rotateInput = rotate ? ` rotate(${rotate})` : "";
 
-    console.log('Rotate Input:', rotateInput);
+    console.log('Rotate Input next:', rotateInput);
 
     const lineString = {
       "type": "Feature",
