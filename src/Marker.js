@@ -11,8 +11,6 @@ class Marker extends Component {
       pressed: false,
     }
 
-    console.log('hey man.');
-
     this.handleMouseEnter = this.handleMouseEnter.bind(this)
     this.handleMouseLeave = this.handleMouseLeave.bind(this)
     this.handleMouseDown = this.handleMouseDown.bind(this)
@@ -23,6 +21,7 @@ class Marker extends Component {
     this.handleBlur = this.handleBlur.bind(this)
   }
   handleMouseEnter(evt) {
+    console.log(evt);
     evt.persist()
     const { onMouseEnter, marker } = this.props
     this.setState({
