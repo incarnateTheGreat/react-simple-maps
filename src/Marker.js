@@ -104,6 +104,8 @@ class Marker extends Component {
     const translation = projection(marker.coordinates)
     const rotateInput = rotate ? ` rotate(${rotate})` : "";
 
+    console.log(scale);
+
     const lineString = {
       "type": "Feature",
       "geometry": {
