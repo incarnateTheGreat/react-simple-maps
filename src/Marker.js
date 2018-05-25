@@ -94,6 +94,8 @@ class Marker extends Component {
       height,
     } = this.props
 
+    console.log('new hit.');
+
     const {
       pressed,
       hover,
