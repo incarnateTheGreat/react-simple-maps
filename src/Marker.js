@@ -21,7 +21,6 @@ class Marker extends Component {
     this.handleBlur = this.handleBlur.bind(this)
   }
   handleMouseEnter(evt) {
-    console.log(evt);
     evt.persist()
     const { onMouseEnter, marker } = this.props
     this.setState({
@@ -87,6 +86,7 @@ class Marker extends Component {
       projection,
       marker,
       style,
+      rotate,
       tabable,
       zoom,
       children,
@@ -102,6 +102,9 @@ class Marker extends Component {
 
     const scale = preserveMarkerAspect ? ` scale(${1/zoom})` : ""
     const translation = projection(marker.coordinates)
+    const rotateInput = rotate ? `rotate(${rotate}deg)` : "";
+
+    console.log('Rotate Input:', rotateInput);
 
     const lineString = {
       "type": "Feature",
@@ -123,7 +126,7 @@ class Marker extends Component {
          transform={ `translate(
            ${ translation[0] }
            ${ translation[1] }
-         ) ${scale}`}
+         ) ${scale} ${rotateInput}`}
          style={ style[isHidden ? "hidden" : (pressed || hover ? (pressed ? "pressed" : "hover") : "default")] }
          onMouseEnter={ this.handleMouseEnter }
          onMouseLeave={ this.handleMouseLeave }
