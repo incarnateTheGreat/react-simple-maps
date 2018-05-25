@@ -100,13 +100,9 @@ class Marker extends Component {
       hover,
     } = this.state
 
-    console.log('Rotate Value:', rotate);
-
     const scale = preserveMarkerAspect ? ` scale(${1/zoom})` : ""
     const translation = projection(marker.coordinates)
     const rotateInput = rotate ? ` rotate(${rotate})` : "";
-
-    console.log('Rotate Input next:', rotateInput);
 
     const lineString = {
       "type": "Feature",
