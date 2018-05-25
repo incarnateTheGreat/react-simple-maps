@@ -11,6 +11,8 @@ class Marker extends Component {
       pressed: false,
     }
 
+    console.log('constructor.');
+
     this.handleMouseEnter = this.handleMouseEnter.bind(this)
     this.handleMouseLeave = this.handleMouseLeave.bind(this)
     this.handleMouseDown = this.handleMouseDown.bind(this)
@@ -93,8 +95,6 @@ class Marker extends Component {
       width,
       height,
     } = this.props
-
-    console.log('new hit.');
 
     const {
       pressed,
